@@ -5,8 +5,7 @@ const axios = require('axios');
 const config = require('config');
 const login = require('./login');
 
-const mode = process.env.NODE_ENV || 'dev';
-const host = config.get(`${mode}.dare_url`);
+const host = config.get('dare_url');
 
 async function getPoliciesFromServer(token) {
   const requestconfig = {

@@ -4,10 +4,9 @@ const router = express.Router();
 const axios = require('axios');
 const config = require('config');
 
-const mode = process.env.NODE_ENV || 'dev';
-const host = config.get(`${mode}.dare_url`);
-const clientid = config.get(`${mode}.client_id`);
-const clientsecret = config.get(`${mode}.client_secret`);
+const host = config.get('dare_url');
+const clientid = config.get('client_id');
+const clientsecret = config.get('client_secret');
 
 async function getToken() {
   const promise = await axios.post(`${host}/api/login`, {
