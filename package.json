@@ -3,10 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "lint": "eslint --fix --ext .js",
     "start": "node ./bin/www",
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.21.0",
+    "config": "^3.3.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
@@ -15,6 +18,13 @@
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
     "jest": "^26.6.3"
+  },
+  "peerDependencies": {
+    "eslint": ",^5.16.0 || ^6.8.0 || ^7.2.0",
+    "eslint-plugin-import": "^2.21.2"
   }
 }
