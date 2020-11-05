@@ -18,12 +18,11 @@ async function getPoliciesFromServer(token) {
   return promise.data;
 }
 
-async function getToken(res, next) {
-  return login.getToken(res, next);
-}
-
 async function getPolicies(res, next) {
-  const token = await getToken(res, next);
+  let token = {};
+  await (async () => {
+    token = await login.getToken(res, next);
+  })();
   return getPoliciesFromServer(token.token);
 }
 

@@ -19,17 +19,12 @@ async function getClientsFromServer(token) {
   return promise.data;
 }
 
-async function getToken(res, next) {
-  return login.getToken(res, next);
-}
-
 async function getClients(res, next) {
-  const token = await getToken(res, next);
+  let token = {};
+  await (async () => {
+    token = await login.getToken(res, next);
+  })();
   return getClientsFromServer(token.token);
-}
-
-async function getPolicies(res, next) {
-  return policies.getPolicies(res, next);
 }
 
 router.get('/', async (req, res, next) => {
@@ -46,7 +41,10 @@ router.get('/:id', async (req, res, next) => {
 
 router.get('/:id/policies', async (req, res, next) => {
   const { id } = req.params;
-  const allPolicies = await getPolicies(res, next);
+  let allPolicies = {};
+  await (async () => {
+    allPolicies = await policies.getPolicies(res, next);
+  })();
   const policiesFromClient = allPolicies.filter((policy) => policy.clientId === id);
   res.send(policiesFromClient);
 });
