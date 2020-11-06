@@ -1,16 +1,13 @@
-const axios = require('axios');
-const config = require('config');
+const axios = require('../remote/axiosConfig');
 const getToken = require('./LoginService');
-
-const host = config.get('dare_url');
 
 async function getClientsFromServer(token) {
   const requestConfig = {
+    url: '/api/clients',
+    method: 'get',
     headers: { Authorization: `Bearer ${token}` },
   };
-  const promise = await axios.get(`${host}/api/clients`, requestConfig).catch((error) => {
-    throw error;
-  });
+  const promise = await axios.request(requestConfig);
   return promise.data;
 }
 
