@@ -1,0 +1,341 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "cb73ff14-5ee2-4a0e-a63e-d8ea037d428d",
+			"name": "DARE",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [
+				"f2fec497-8a31-410f-8d20-f9dfa95bf78f",
+				"6c1651ac-75d8-46a8-a1a9-5d8f505cee77",
+				"9eb0a7ff-042e-4c62-b5ce-fb4ffe5e1a53",
+				"d95640e1-9609-4435-90be-c01c5fc3fb7f",
+				"1b71716f-410c-4d18-9426-647df6839258",
+				"2f694347-9d3a-41a4-8b02-fa41c376a8bf"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {},
+			"folders": [],
+			"requests": [
+				{
+					"id": "1b71716f-410c-4d18-9426-647df6839258",
+					"name": "Client by id",
+					"url": "localhost:3000/clients/a0ece5db-cd14-4f21-812f-966633e7be86/policies",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "44ce05a0-ee25-4ede-8379-d132592143a2",
+								"exec": [
+									"pm.test(\"Client by id should exist\", function() {\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"var clientSchema = {\r",
+									"    \"properties\": {\r",
+									"        \"id\": {\"type\": \"string\" },\r",
+									"        \"name\": {\"type\": \"string\"},\r",
+									"        \"email\": {\"type\": \"string\"},\r",
+									"        \"role\": {\"type\": \"string\"}\r",
+									"    }\r",
+									"};\r",
+									"tv4.addSchema('clientSchema', clientSchema);\r",
+									"pm.test(\"Client by id schema should be valid\", function() {\r",
+									"    pm.expect(tv4.validate(pm.response.json, clientSchema)).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "pm.test(\"Client by id should exist\", function() {\r\n    pm.response.to.be.ok;\r\n    pm.response.to.be.withBody;\r\n    pm.response.to.be.json;\r\n});\r\n\r\nvar clientSchema = {\r\n    \"properties\": {\r\n        \"id\": {\"type\": \"string\" },\r\n        \"name\": {\"type\": \"string\"},\r\n        \"email\": {\"type\": \"string\"},\r\n        \"role\": {\"type\": \"string\"}\r\n    }\r\n};\r\ntv4.addSchema('clientSchema', clientSchema);\r\npm.test(\"Client by id schema should be valid\", function() {\r\n    pm.expect(tv4.validate(pm.response.json, clientSchema)).to.be.true;\r\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "cb73ff14-5ee2-4a0e-a63e-d8ea037d428d",
+					"pathVariables": {}
+				},
+				{
+					"id": "2f694347-9d3a-41a4-8b02-fa41c376a8bf",
+					"name": "Policies of client",
+					"url": "localhost:3000/clients/a0ece5db-cd14-4f21-812f-966633e7be86",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "20570adf-9031-43a9-8546-ca96a7cf1876",
+								"exec": [
+									"pm.test(\"Policy of client by id should exist\", function() {\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"var clientSchema = {\r",
+									"    \"properties\": {\r",
+									"        \"id\": {\"type\": \"string\" },\r",
+									"        \"name\": {\"type\": \"string\"},\r",
+									"        \"email\": {\"type\": \"string\"},\r",
+									"        \"role\": {\"type\": \"string\"}\r",
+									"    }\r",
+									"};\r",
+									"tv4.addSchema('clientSchema', clientSchema);\r",
+									"pm.test(\"Policy of client by id schema should be valid\", function() {\r",
+									"    pm.expect(tv4.validate(pm.response.json, clientSchema)).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "pm.test(\"Policy of client by id should exist\", function() {\r\n    pm.response.to.be.ok;\r\n    pm.response.to.be.withBody;\r\n    pm.response.to.be.json;\r\n});\r\n\r\nvar clientSchema = {\r\n    \"properties\": {\r\n        \"id\": {\"type\": \"string\" },\r\n        \"name\": {\"type\": \"string\"},\r\n        \"email\": {\"type\": \"string\"},\r\n        \"role\": {\"type\": \"string\"}\r\n    }\r\n};\r\ntv4.addSchema('clientSchema', clientSchema);\r\npm.test(\"Policy of client by id schema should be valid\", function() {\r\n    pm.expect(tv4.validate(pm.response.json, clientSchema)).to.be.true;\r\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "cb73ff14-5ee2-4a0e-a63e-d8ea037d428d",
+					"pathVariables": {}
+				},
+				{
+					"id": "6c1651ac-75d8-46a8-a1a9-5d8f505cee77",
+					"name": "Policy by id",
+					"url": "localhost:3000/policies/64cceef9-3a01-49ae-a23b-3761b604800b",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd71969d-2221-4805-b6e1-36c9542f9327",
+								"exec": [
+									"pm.test(\"Policy by id should exist\", function() {\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"var policySchema = {\r",
+									"    \"properties\": {\r",
+									"        \"id\": {\"type\": \"string\" },\r",
+									"        \"amountInsured\": {\"type\": \"number\"},\r",
+									"        \"email\": {\"type\": \"string\"},\r",
+									"        \"inceptionDate\": {\"type\": \"string\"},\r",
+									"        \"installmentPayment\": {\"type\": \"boolean\"},\r",
+									"        \"clientId\": {\"type\": \"string\"}\r",
+									"    }\r",
+									"};\r",
+									"tv4.addSchema('policySchema', policySchema);\r",
+									"pm.test(\"Policy by id schema should be valid\", function() {\r",
+									"    pm.expect(tv4.validate(pm.response.json, policySchema)).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "pm.test(\"Policy by id should exist\", function() {\r\n    pm.response.to.be.ok;\r\n    pm.response.to.be.withBody;\r\n    pm.response.to.be.json;\r\n});\r\n\r\nvar policySchema = {\r\n    \"properties\": {\r\n        \"id\": {\"type\": \"string\" },\r\n        \"amountInsured\": {\"type\": \"number\"},\r\n        \"email\": {\"type\": \"string\"},\r\n        \"inceptionDate\": {\"type\": \"string\"},\r\n        \"installmentPayment\": {\"type\": \"boolean\"},\r\n        \"clientId\": {\"type\": \"string\"}\r\n    }\r\n};\r\ntv4.addSchema('policySchema', policySchema);\r\npm.test(\"Policy by id schema should be valid\", function() {\r\n    pm.expect(tv4.validate(pm.response.json, policySchema)).to.be.true;\r\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "cb73ff14-5ee2-4a0e-a63e-d8ea037d428d",
+					"pathVariables": {}
+				},
+				{
+					"id": "9eb0a7ff-042e-4c62-b5ce-fb4ffe5e1a53",
+					"name": "All policies",
+					"url": "localhost:3000/policies",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dbd53a0d-9f54-44a9-8387-c36789db95c6",
+								"exec": [
+									"pm.test(\"Policies should exist\", function() {\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"var policySchema = {\r",
+									"    \"properties\": {\r",
+									"        \"id\": {\"type\": \"string\" },\r",
+									"        \"amountInsured\": {\"type\": \"number\"},\r",
+									"        \"email\": {\"type\": \"string\"},\r",
+									"        \"inceptionDate\": {\"type\": \"string\"},\r",
+									"        \"installmentPayment\": {\"type\": \"boolean\"},\r",
+									"        \"clientId\": {\"type\": \"string\"}\r",
+									"    }\r",
+									"};\r",
+									"tv4.addSchema('policySchema', policySchema);\r",
+									"pm.test(\"Policies schema should be valid\", function() {\r",
+									"    pm.expect(tv4.validate(pm.response.json, policySchema)).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "pm.test(\"Policies should exist\", function() {\r\n    pm.response.to.be.ok;\r\n    pm.response.to.be.withBody;\r\n    pm.response.to.be.json;\r\n});\r\n\r\nvar policySchema = {\r\n    \"properties\": {\r\n        \"id\": {\"type\": \"string\" },\r\n        \"amountInsured\": {\"type\": \"number\"},\r\n        \"email\": {\"type\": \"string\"},\r\n        \"inceptionDate\": {\"type\": \"string\"},\r\n        \"installmentPayment\": {\"type\": \"boolean\"},\r\n        \"clientId\": {\"type\": \"string\"}\r\n    }\r\n};\r\ntv4.addSchema('policySchema', policySchema);\r\npm.test(\"Policies schema should be valid\", function() {\r\n    pm.expect(tv4.validate(pm.response.json, policySchema)).to.be.true;\r\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "cb73ff14-5ee2-4a0e-a63e-d8ea037d428d",
+					"pathVariables": {}
+				},
+				{
+					"id": "d95640e1-9609-4435-90be-c01c5fc3fb7f",
+					"name": "All clients",
+					"url": "localhost:3000/clients",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bae1a9fe-5ab2-414e-8eeb-21a312b99956",
+								"exec": [
+									"pm.test(\"Clients should exist\", function() {\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"var clientSchema = {\r",
+									"    \"properties\": {\r",
+									"        \"id\": {\"type\": \"string\" },\r",
+									"        \"name\": {\"type\": \"string\"},\r",
+									"        \"email\": {\"type\": \"string\"},\r",
+									"        \"role\": {\"type\": \"string\"}\r",
+									"    }\r",
+									"};\r",
+									"tv4.addSchema('clientSchema', clientSchema);\r",
+									"pm.test(\"Clients schema should be valid\", function() {\r",
+									"    pm.expect(tv4.validate(pm.response.json, clientSchema)).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "pm.test(\"Clients should exist\", function() {\r\n    pm.response.to.be.ok;\r\n    pm.response.to.be.withBody;\r\n    pm.response.to.be.json;\r\n});\r\n\r\nvar clientSchema = {\r\n    \"properties\": {\r\n        \"id\": {\"type\": \"string\" },\r\n        \"name\": {\"type\": \"string\"},\r\n        \"email\": {\"type\": \"string\"},\r\n        \"role\": {\"type\": \"string\"}\r\n    }\r\n};\r\ntv4.addSchema('clientSchema', clientSchema);\r\npm.test(\"Clients schema should be valid\", function() {\r\n    pm.expect(tv4.validate(pm.response.json, clientSchema)).to.be.true;\r\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "cb73ff14-5ee2-4a0e-a63e-d8ea037d428d",
+					"pathVariables": {}
+				},
+				{
+					"id": "f2fec497-8a31-410f-8d20-f9dfa95bf78f",
+					"name": "Login",
+					"url": "localhost:3000/login",
+					"description": "",
+					"data": null,
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": null,
+					"headerData": null,
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "40bb4553-0d6e-4bcd-ad0a-cb6b0c9b2164",
+								"exec": [
+									"pm.test(\"Login endpoint should work\", function() {\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"var tokenSchema = {\r",
+									"    \"properties\": {\r",
+									"        \"token\": {\"type\": \"string\" },\r",
+									"        \"type\": {\"type\": \"string\"}\r",
+									"    }\r",
+									"};\r",
+									"tv4.addSchema('tokenSchema', tokenSchema);\r",
+									"pm.test(\"Token schema should be valid\", function() {\r",
+									"    pm.expect(tv4.validate(pm.response.json, tokenSchema)).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "pm.test(\"Login endpoint should work\", function() {\r\n    pm.response.to.be.ok;\r\n    pm.response.to.be.withBody;\r\n    pm.response.to.be.json;\r\n});\r\n\r\nvar tokenSchema = {\r\n    \"properties\": {\r\n        \"token\": {\"type\": \"string\" },\r\n        \"type\": {\"type\": \"string\"}\r\n    }\r\n};\r\ntv4.addSchema('tokenSchema', tokenSchema);\r\npm.test(\"Token schema should be valid\", function() {\r\n    pm.expect(tv4.validate(pm.response.json, tokenSchema)).to.be.true;\r\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "cb73ff14-5ee2-4a0e-a63e-d8ea037d428d",
+					"pathVariables": {}
+				}
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "6464cdac-bc76-4d4c-9564-fbe40798bed5",
+			"name": "My Workspace - globals",
+			"values": []
+		}
+	],
+	"headerPresets": [],
+	"globals": []
+}
