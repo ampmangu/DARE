@@ -11,10 +11,10 @@ async function getClientsFromServer(token) {
   return promise.data;
 }
 
-async function getClients(res, next) {
+async function getClients() {
   let token = {};
   await (async () => {
-    token = await getToken(res, next);
+    token = await getToken();
   })();
   return getClientsFromServer(token.token);
 }
