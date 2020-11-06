@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 const config = require('config');
-const login = require('./login');
+const getToken = require('../service/LoginService');
 
 const host = config.get('dare_url');
 
@@ -20,7 +20,7 @@ async function getPoliciesFromServer(token) {
 async function getPolicies(res, next) {
   let token = {};
   await (async () => {
-    token = await login.getToken(res, next);
+    token = await getToken(res, next);
   })();
   return getPoliciesFromServer(token.token);
 }
