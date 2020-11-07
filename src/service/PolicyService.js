@@ -12,10 +12,10 @@ async function getPoliciesFromServer(token) {
   return promise.data;
 }
 
-async function getPolicies(res, next) {
+async function getPolicies() {
   let token = {};
   await (async () => {
-    token = await getToken(res, next);
+    token = await getToken();
   })();
   return getPoliciesFromServer(token.token);
 }
