@@ -8,4 +8,8 @@ describe('Testing main endpoint', () => {
     expect(res.statusCode).toBe(200);
     expect(res.body).toStrictEqual({});
   });
+  it('Should return 4040', async () => {
+    const res = await request(app).get('/wrong-path');
+    expect(res.statusCode).toBe(404);
+  });
 });
