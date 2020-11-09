@@ -14,3 +14,5 @@ They must have three values filled out:
 ### Tool used for testing
 
 Jest: `$ npm test` will run all the tests.
+
+Postman: The file `DARE-collection.json` contains tests that can be imported and used with Postman Runner.
